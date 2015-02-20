@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# 20.02.2015
+
+# Little script to install plesk on a CentOS system
+
+# Perform an update to make sure everything is up to date
+yum update
+
+# Install wget
+yum install wget
+
+# Give the rights to the TMP directories
+chmod 777 /tmp && chmod 777 /var/tmp
+
+# Get the package from parallels
+wget -O - http://autoinstall.plesk.com/one-click-installer | sh
+
+# Echo to show the successful installation
+echo ""
+echo ""
+echo "Done. You can now open plesk in your browser using https//YourIP:8443/."
+echo ""
+
